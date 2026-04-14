@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image to PDF - Official App Site</title>
+  <meta name="description" content="Convert images to PDF in seconds. Offline, fast, and easy on Android." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --ink: #10243f;
+      --card: #ffffff;
+      --accent: #0c8f8f;
+      --accent-2: #ff8a00;
+      --muted: #4d6179;
+      --ring: rgba(12, 143, 143, 0.15);
+      --shadow: 0 14px 40px rgba(16, 36, 63, 0.14);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Trebuchet MS", Tahoma, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 20%, #d8efff 0%, transparent 32%),
+        radial-gradient(circle at 85% 10%, #ffe8cf 0%, transparent 26%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      line-height: 1.55;
+    }
+
+    .wrap {
+      width: min(1060px, 92vw);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 14px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 999px;
+      padding: 10px 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      font-size: 1rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .pill.primary {
+      background: linear-gradient(135deg, var(--accent), #0a6fb8);
+      color: #fff;
+      box-shadow: 0 10px 20px var(--ring);
+    }
+
+    .pill.secondary {
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid #d4e0ef;
+    }
+
+    .pill:hover { transform: translateY(-1px); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+      padding: 30px 0 36px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+      margin: 8px 0 14px;
+      letter-spacing: 0.2px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: .82rem;
+      color: #fff;
+      background: linear-gradient(90deg, var(--accent-2), #ff5f6d);
+      border-radius: 999px;
+      padding: 6px 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 700;
+    }
+
+    .lead {
+      color: var(--muted);
+      max-width: 54ch;
+      margin-bottom: 24px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .phone {
+      background: linear-gradient(145deg, #0f1f3a, #203f70);
+      border-radius: 34px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      transform: rotate(-3deg);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .screen {
+      background: #f9fcff;
+      border-radius: 22px;
+      overflow: hidden;
+      min-height: 420px;
+      border: 3px solid #0d1d35;
+    }
+
+    .screen-top {
+      background: linear-gradient(90deg, #0c8f8f, #0a6fb8);
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 14px;
+      font-size: .92rem;
+    }
+
+    .screen-body {
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .mock-row {
+      background: #ffffff;
+      border: 1px solid #d9e7f7;
+      border-radius: 12px;
+      padding: 11px;
+      font-size: .9rem;
+      color: #2a4563;
+    }
+
+    section {
+      margin: 14px 0 26px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid #e4edf8;
+      box-shadow: 0 8px 20px rgba(16, 36, 63, 0.06);
+      padding: 18px;
+      transform: translateY(16px);
+      opacity: 0;
+      animation: rise .6s ease forwards;
+    }
+
+    .card:nth-child(2) { animation-delay: .1s; }
+    .card:nth-child(3) { animation-delay: .2s; }
+    .card:nth-child(4) { animation-delay: .3s; }
+    .card:nth-child(5) { animation-delay: .4s; }
+    .card:nth-child(6) { animation-delay: .5s; }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.04rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .about {
+      background: linear-gradient(120deg, #0f2d52, #18406f);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .about p { margin: 0; max-width: 72ch; }
+
+    footer {
+      padding: 30px 0 34px;
+      color: #4b6079;
+      font-size: .92rem;
+    }
+
+    @keyframes rise {
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: rotate(-3deg) translateY(0); }
+      50% { transform: rotate(-3deg) translateY(-8px); }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .phone {
+        width: min(460px, 92%);
+        margin: 0 auto;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        border-radius: 18px;
+      }
+
+      .brand {
+        font-size: .95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav class="nav">
+      <div class="brand">Image to PDF</div>
+      <a class="pill secondary" href="privacy-policy.html">Privacy Policy</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <span class="tag">Android App</span>
+        <h1>Turn Photos into Clean PDFs in Seconds</h1>
+        <p class="lead">
+          Image to PDF is a fast, offline-first Android app that converts gallery images or camera captures into high-quality PDF files with full page control.
+        </p>
+        <div class="cta-row">
+          <a class="pill primary" href="https://play.google.com/store" target="_blank" rel="noopener">Get on Google Play</a>
+          <a class="pill secondary" href="privacy-policy.html">Read Privacy Policy</a>
+        </div>
+      </div>
+
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <div class="screen-top">Image to PDF</div>
+          <div class="screen-body">
+            <div class="mock-row">Select multiple images</div>
+            <div class="mock-row">Drag to reorder pages</div>
+            <div class="mock-row">Choose A4 / Letter / Legal</div>
+            <div class="mock-row">Portrait or Landscape</div>
+            <div class="mock-row">Create and share PDF instantly</div>
+            <div class="mock-row">Works 100% offline</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid">
+        <article class="card">
+          <h3>Multi-Image Import</h3>
+          <p>Pick several images from your gallery and combine them into one PDF.</p>
+        </article>
+        <article class="card">
+          <h3>Camera Capture</h3>
+          <p>Take photos directly in-app and convert them to PDF right away.</p>
+        </article>
+        <article class="card">
+          <h3>Page Reordering</h3>
+          <p>Arrange pages with drag-and-drop before exporting your document.</p>
+        </article>
+        <article class="card">
+          <h3>Custom Page Setup</h3>
+          <p>Choose A4, Letter, or Legal paper size in portrait or landscape.</p>
+        </article>
+        <article class="card">
+          <h3>PDF Manager</h3>
+          <p>Open, share, and delete generated PDFs from one organized list.</p>
+        </article>
+        <article class="card">
+          <h3>Offline and Private</h3>
+          <p>Your files stay on-device. No internet needed for PDF creation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about">
+      <p>
+        Built with Kotlin and modern Android UI guidelines, Image to PDF focuses on speed, simplicity, and privacy for students, professionals, and anyone who needs reliable photo-to-PDF conversion on the go.
+      </p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div>Contact: support@imagetopdf.app</div>
+    <div>Copyright 2026 Image to PDF</div>
+  </footer>
+</body>
+</html>
