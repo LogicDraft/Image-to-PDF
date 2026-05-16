@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors - Teal (Darker for night) -->
+    <color name="primary">#80CBC4</color>
+    <color name="primary_variant">#00897B</color>
+    <color name="on_primary">#003732</color>
+    
+    <!-- Secondary Colors - Blue (Darker for night) -->
+    <color name="secondary">#5C9FE8</color>
+    <color name="secondary_variant">#1976D2</color>
+    <color name="on_secondary">#FFFFFF</color>
+    
+    <!-- Tertiary Colors - Coral/Orange -->
+    <color name="tertiary">#E57373</color>
+    
+    <!-- Surface Colors -->
+    <color name="surface">#1C1B1F</color>
+    <color name="surface_variant">#49454F</color>
+    <color name="surface_container">#1C1B1F</color>
+    <color name="surface_container_high">#2B2930</color>
+    
+    <!-- Background -->
+    <color name="background">#121212</color>
+    <color name="on_background">#E6E1E5</color>
+    
+    <!-- Text Colors -->
+    <color name="on_surface">#E6E1E5</color>
+    <color name="on_surface_variant">#CAC4D0</color>
+    
+    <!-- Title Color -->
+    <color name="title_red">#FF8A80</color>
+    
+    <!-- Outline -->
+    <color name="outline">#938F99</color>
+    <color name="outline_variant">#49454F</color>
+    
+    <!-- Error -->
+    <color name="error">#F2B8B5</color>
+    <color name="on_error">#601410</color>
+    
+    <!-- Shadow -->
+    <color name="shadow">#000000</color>
+    
+    <!-- Card & Image Placeholders -->
+    <color name="card_background">#1C1B1F</color>
+    <color name="image_placeholder">#333333</color>
+    
+    <!-- Theme Specific Colors (adjusting for dark mode visibility) -->
+    <!-- Red -->
+    <color name="primary_red">#FF8A80</color>
+    <color name="on_primary_red">#690005</color>
+    <color name="primary_variant_red">#FF5252</color>
+    <color name="secondary_red">#FF5252</color>
+    <color name="on_secondary_red">#410002</color>
+    <color name="secondary_variant_red">#FF1744</color>
+
+    <!-- Green -->
+    <color name="primary_green">#81C784</color>
+    <color name="on_primary_green">#003300</color>
+    <color name="primary_variant_green">#4CAF50</color>
+    <color name="secondary_green">#66BB6A</color>
+    <color name="on_secondary_green">#002105</color>
+    <color name="secondary_variant_green">#43A047</color>
+
+    <!-- Orange -->
+    <color name="primary_orange">#FFB74D</color>
+    <color name="on_primary_orange">#452B00</color>
+    <color name="primary_variant_orange">#FF9800</color>
+    <color name="secondary_orange">#FF9800</color>
+    <color name="on_secondary_orange">#2B1700</color>
+    <color name="secondary_variant_orange">#FB8C00</color>
+    
+    <!-- Purple -->
+    <color name="primary_purple">#E1BEE7</color>
+    <color name="on_primary_purple">#4A0072</color>
+    <color name="primary_variant_purple">#AB47BC</color>
+    <color name="secondary_purple">#E040FB</color>
+    <color name="on_secondary_purple">#38006B</color>
+    <color name="secondary_variant_purple">#D500F9</color>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    style="@style/Widget.Material3.CardView.Filled"
+    app:cardCornerRadius="12dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/squareSpacer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?attr/colorSurfaceVariant"
+            android:contentDescription="@string/cd_add"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@id/squareSpacer"
+            app:layout_constraintEnd_toEndOf="@id/squareSpacer"
+            app:layout_constraintStart_toStartOf="@id/squareSpacer"
+            app:layout_constraintTop_toTopOf="@id/squareSpacer" />
+
+        <View
+            android:id="@+id/viewOverlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.4"
+            android:background="?attr/colorPrimary"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/squareSpacer"
+            app:layout_constraintEnd_toEndOf="@id/squareSpacer"
+            app:layout_constraintStart_toStartOf="@id/squareSpacer"
+            app:layout_constraintTop_toTopOf="@id/squareSpacer" />
+
+        <CheckBox
+            android:id="@+id/cbSelect"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="8dp"
+            android:button="@drawable/bg_checkbox"
+            android:checked="false"
+            android:clickable="false"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="@id/squareSpacer"
+            app:layout_constraintTop_toTopOf="@id/squareSpacer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
